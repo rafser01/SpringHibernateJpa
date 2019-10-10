@@ -10,6 +10,7 @@ package io.bitsofts.hibernatewithmaven;
 import com.j2ee.dao.ProductService;
 import com.j2ee.dao.ProductServiceImpJpa;
 import com.j2ee.dao.ProductServiceImpl;
+import com.j2ee.model.Product;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -23,7 +24,10 @@ public class MainClass {
 //        ProductService ps = context.getBean("productService", ProductServiceImpl.class);
 //        System.out.println(ps.getProducts().size());
         ProductService ps = (ProductService) context.getBean("jpaService");
-        System.out.println("---------- "+ps.getProducts().get(0).getName());
+//        System.out.println("---------- First product id "+ps.getProducts().get(0).getId());
+//        System.out.println("First product name by id "+ps.findProductById(5).getName());
+        Product p = ps.findByName("Mango").get(0);
+        System.out.println("Id of Mango ---- "+p.getId());
     }
     
 }

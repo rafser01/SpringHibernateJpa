@@ -14,6 +14,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "product")
+@NamedQueries({
+    @NamedQuery(name = "Product.findAll", query = "select p from Product p"),
+    @NamedQuery(name = "Product.findById", query = "select p from Product p where p.id=:id")
+})
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

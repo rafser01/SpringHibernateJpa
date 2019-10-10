@@ -35,4 +35,14 @@ public class ProductServiceImpl implements ProductService  {
 		return sessionFactory.openSession().createQuery("From Product p").list();
 	}
 
+    @Override
+    public Product findProductById(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Product> findByName(String name) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
